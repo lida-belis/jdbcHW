@@ -24,6 +24,7 @@ public class BaseTest {
 
     @AfterTest
     public void tearDown() {
+        jdbcService.closeStatement();
         jdbcService.closeConnection();
     }
 }

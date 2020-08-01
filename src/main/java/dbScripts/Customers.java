@@ -36,10 +36,15 @@ public class Customers {
         String updateTableSQL = "UPDATE public.customers\n" +
                 "\tSET lastname='Nechiporenko'\n" +
                 "\tWHERE lastname = 'Duk';";
+
+        jdbcService.executeQuery(updateTableSQL);
     }
 
     public void deleteCustomer() {
         String deleteTableSQL = "DELETE FROM public.customers\n" +
                 "\tWHERE \"id\" = 1;";
+
+        jdbcService.executeQuery(deleteTableSQL);
+
     }
 }
