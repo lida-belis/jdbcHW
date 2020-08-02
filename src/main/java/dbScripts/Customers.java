@@ -32,17 +32,17 @@ public class Customers {
         jdbcService.executeQuery(insertTableSQL);
     }
 
-    public void updateCustomer() {
+    public void updateCustomer(String lastname) {
         String updateTableSQL = "UPDATE public.customers\n" +
-                "\tSET lastname='Nechiporenko'\n" +
+                "\tSET lastname='" + lastname + "'\n" +
                 "\tWHERE lastname = 'Duk';";
 
         jdbcService.executeQuery(updateTableSQL);
     }
 
-    public void deleteCustomer() {
+    public void deleteCustomer(int id) {
         String deleteTableSQL = "DELETE FROM public.customers\n" +
-                "\tWHERE \"id\" = 1;";
+                "\tWHERE \"id\" =" + id + ";";
 
         jdbcService.executeQuery(deleteTableSQL);
 

@@ -30,8 +30,6 @@ public class JDBCService {
             return;
         }
 
-        logger.info("PostgreSQL JDBC Driver successfully connected");
-
         if (connection != null) {
             logger.info("You successfully connected to database now");
         } else {

@@ -40,7 +40,7 @@ public class sqlTest extends BaseTest {
     @Test(dependsOnMethods = "addCustomers")
     public void updateCustomers() {
         Customers customers = new Customers(jdbcService);
-        customers.updateCustomer();
+        customers.updateCustomer("Nechiporenko");
 
         ResultSet rs = jdbcService.executeQuery(sql);
 
@@ -66,7 +66,7 @@ public class sqlTest extends BaseTest {
     @Test(dependsOnMethods = "updateCustomers")
     public void deleteCustomer() {
         Customers customers = new Customers(jdbcService);
-        customers.deleteCustomer();
+        customers.deleteCustomer(1);
         ResultSet rs = jdbcService.executeQuery(sql);
 
         try {
