@@ -21,11 +21,9 @@ public class JDBCService {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URL, username, password);
         } catch (ClassNotFoundException e) {
-            logger.error("PostgreSQL JDBC Driver is not found. Include it in your library path ");
             logger.error(e.getMessage());
             return;
         }catch (SQLException e) {
-            logger.error("Connection Failed");
             logger.error(e.getMessage());
             return;
         }
@@ -45,7 +43,6 @@ public class JDBCService {
         try {
             connection.close();
         } catch (SQLException throwables) {
-            logger.error("Close connection Failed");
             logger.error(throwables.getMessage());
         }
     }
@@ -55,12 +52,10 @@ public class JDBCService {
             if (statement == null) {
                 statement = getDBConnection().createStatement();
             }
-
             logger.info("Statement is ready.");
         } catch (SQLException e) {
             logger.error(e.getMessage());
         }
-
         return statement;
     }
 
